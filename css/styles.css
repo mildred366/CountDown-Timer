@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Text';
+}
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --White: hsl(0, 0%, 100%);
+    --Darkblue: hsl(236, 21%, 26%);
+    --vdark-blue: hsl(235, 16%, 14%);
+    --vVerydark-blue: hsl(234, 17%, 12%);
+    --grayish-blue: hsl(237, 18%, 59%);
+    --Soft-red: hsl(345, 95%, 68%);
+}
+
+.attribution {
+    font-size: 14px;
+    text-align: center;
+    color: var(--White);
+}
+
+.attribution a {
+    color: var(--purple);
+}
+
+.mainContainer {
+    background-color: var(--vVerydark-blue);
+    background-image: url('../images/bg-stars.svg');
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient(red); */
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.mainContainer h1 {
+    padding-top: 9rem;
+    color: var(--White);
+    font-size: 20px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    padding-left: 5rem;
+}
+
+/* .wrapper {
+    height: 100vh;
+    position: relative;
+} */
+
+.imageDiv {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-image: url('../images/pattern-hills.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Align the items in a vertical form */
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.flip_card {
+    border-radius: 5px;
+    flex-direction: column;
+    position: relative;
+    font-size: 5.2rem;
+    width: 150px;
+    background-color: var(--Darkblue);
+    display: flex;
+    color: var(--Soft-red);
+    /* font-weight: 800; */
+    box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* The side of the div that looks like a hole */
+.left_half,
+.right_half {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--vVerydark-blue);
+}
+
+/* made the hole appear in the middle */
+.left_half {
+    position: absolute;
+    top: 45%;
+    left: -5%;
+}
+
+.right_half {
+    position: absolute;
+    left: 96%;
+    top: 45%;
+}
+
+/* Styles for the text Days, Months and Years */
+.countdown .title {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: var(--grayish-blue);
+    text-align: center;
+}
+
+.top,
+.bottom {
+    height: 0.75em;
+    line-height: 1;
+    padding: 0.25em;
+    overflow: hidden;
+}
+
+/* made the seperator line visible */
+.top {
+    border-bottom: 0.1px solid var(--vdark-blue);
+}
+
+.top-flip,
+.bottom-flip {
+    position: absolute;
+}
+
+/* the flip animation */
+.top-flip {
+    transform-origin: bottom;
+    animation: flip-top 0.5s ease-in forwards;
+    transform: rotateX(0deg);
+}
+
+.bottom-flip {
+    transform-origin: top;
+    animation: flip-bottom 0.5s ease-out 0.5s;
+    transform: rotateX(90deg);
+}
+
+@keyframes flip-top {
+    to {
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes flip-bottom {
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+.social-icons {
+    margin: 50px 10px;
+    width: 10%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    filter: invert(60%) sepia(43%) saturate(6017%) hue-rotate(315deg) brightness(109%) contrast(97%);
+}
+
+
+@media screen and (max-width: 767px) {
+    /* .pattern__hill > img {
+    width: 100%;
+    object-position: 0;
+  } */
+
+    .flip_card {
+        width: 70px;
+        font-size: 2rem;
+    }
+
+    .left_half,
+    .right_half {
+        width: 10px;
+        height: 10px;
+    }
+
+    .left_half {
+        position: absolute;
+        top: 41%;
+        left: -8%;
+    }
+
+    .right_half {
+        position: absolute;
+        left: 90%;
+        top: 41%;
+    }
+
+    .countdown .title {
+    margin-top: 1.5rem;
+    font-size: 0.5rem;
+    letter-spacing: 3px;
+    color: var(--grayish-blue);
+    text-align: center;
+}
+}
+
+@media screen and (min-width: 1400px) {
+
+
+
+    /* .pattern__hill {
+    width: 100%;
+    overflow: auto;
+  } */
+
+
+    /* .pattern__hill > img {
+    width: 100%;
+    object-position: 0;
+    object-fit: cover;
+  } */
+
+
+    /* .socials__link ul {
+    bottom: 50px;
+  } */
+}
