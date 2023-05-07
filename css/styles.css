@@ -187,10 +187,6 @@
     object-position: 0;
   } */
 
-  .mainContainer{
-      height: 100vh;
-  }
-
 .mainContainer h1 {
     padding-top: 12rem;
     color: var(--White);
